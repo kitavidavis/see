@@ -12,7 +12,7 @@ function App() {
 
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-      <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
+      <MantineProvider theme={{ colorScheme, primaryColor: 'orange', primaryShade: 9 }} withGlobalStyles withNormalizeCSS>
 
     <Dashboard />
 
