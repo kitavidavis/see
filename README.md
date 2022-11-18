@@ -1,6 +1,6 @@
 # TotalEnergies
 
- [See running app](https://totalenergies.vercel.app).
+ [See running app](https://see-learning.vercel.app).
 
 ## Available Scripts
 
