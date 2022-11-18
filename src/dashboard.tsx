@@ -23,6 +23,7 @@ import {
   InputWrapper,
   Select,
   useMantineColorScheme,
+  Table,
 } from '@mantine/core';
 import { useColorScheme, useScrollLock, useViewportSize } from '@mantine/hooks';
 import { SwitchToggle } from './ToggleTheme';
@@ -167,7 +168,42 @@ export default function Dashboard() {
   />
   {Schools.features.map((item: any, index: any) => {
     return (
-      <CircleMarker  eventHandlers={{ click: function(){setFeature(item)} }} key={index} center={[item.properties.Latitude, item.properties.Longitude]} pathOptions={fillBlueOptions} radius={20} />
+      <CircleMarker  eventHandlers={{ click: function(){setFeature(item)} }} key={index} center={[item.properties.Latitude, item.properties.Longitude]} pathOptions={fillBlueOptions} radius={20}>
+        <Popup>
+          <Table>
+            <tbody>
+              <tr>
+                <td><strong>School Id</strong></td>
+                <td>{item.properties.No}</td>
+              </tr>
+              <tr>
+                <td><strong>School</strong></td>
+                <td>{item.properties.School}</td>
+              </tr>
+              <tr>
+                <td><strong>Type</strong></td>
+                <td>{item.properties.Type}</td>
+              </tr>
+              <tr>
+                <td><strong>Year Started</strong></td>
+                <td>{item.properties.Year_Started}</td>
+              </tr>
+              <tr>
+                <td><strong>Students</strong></td>
+                <td>{item.properties.Students}</td>
+              </tr>
+              <tr>
+                <td><strong>Staff</strong></td>
+                <td>{item.properties.Staff}</td>
+              </tr>
+              <tr>
+                <td><strong>Staff per Student</strong></td>
+                <td>{item.properties.Staff_per_student}</td>
+              </tr>
+            </tbody>
+          </Table>
+        </Popup>
+      </CircleMarker>
     )
   })}
 </MapContainer>
