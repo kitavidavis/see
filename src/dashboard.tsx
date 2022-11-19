@@ -168,7 +168,7 @@ export default function Dashboard() {
   />
   {Schools.features.map((item: any, index: any) => {
     return (
-      <CircleMarker  eventHandlers={{ click: function(){setFeature(item)} }} key={index} center={[item.properties.Latitude, item.properties.Longitude]} pathOptions={fillBlueOptions} radius={20}>
+      <CircleMarker  eventHandlers={{ click: function(){setFeature(item)} }} key={index} center={[item.properties.Latitude, item.properties.Longitude]} pathOptions={fillBlueOptions} radius={14}>
         <Popup>
           <Table>
             <tbody>
