@@ -100,7 +100,7 @@ export default function Dashboard() {
 
               <div>
               <Title mb="md" style={{color: 'orange'}} order={5}>Gallery</Title>
-              <Carousel>
+              <Carousel showThumbs={false} >
               <img height={(height - 150) * 0.4} width={'100%'} src={Image1} />
               <img height={(height - 150) * 0.4} width={'100%'} src={Image2} />
             </Carousel>
