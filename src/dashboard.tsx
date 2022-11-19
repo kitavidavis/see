@@ -158,57 +158,6 @@ export default function Dashboard() {
         </Grid.Col>
       </Grid>
       </MediaQuery>
-
-      <MediaQuery largerThan={'md'} styles={{display: 'none'}}>
-      <Card style={{height: height - 100}} shadow='sm'>
-        <MapContainer center={[-1.234,36.754]} style={{height: '100%', width: '100%'}} zoom={10}>
-  <TileLayer
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    url={ theme2.colorScheme === "dark" ? "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}
-  />
-  {Schools.features.map((item: any, index: any) => {
-    return (
-      <CircleMarker  eventHandlers={{ click: function(){setFeature(item)} }} key={index} center={[item.properties.Latitude, item.properties.Longitude]} pathOptions={fillBlueOptions} radius={14}>
-        <Popup>
-          <Table>
-            <tbody>
-              <tr>
-                <td><strong>School Id</strong></td>
-                <td>{item.properties.No}</td>
-              </tr>
-              <tr>
-                <td><strong>School</strong></td>
-                <td>{item.properties.School}</td>
-              </tr>
-              <tr>
-                <td><strong>Type</strong></td>
-                <td>{item.properties.Type}</td>
-              </tr>
-              <tr>
-                <td><strong>Year Started</strong></td>
-                <td>{item.properties.Year_Started}</td>
-              </tr>
-              <tr>
-                <td><strong>Students</strong></td>
-                <td>{item.properties.Students}</td>
-              </tr>
-              <tr>
-                <td><strong>Staff</strong></td>
-                <td>{item.properties.Staff}</td>
-              </tr>
-              <tr>
-                <td><strong>Staff per Student</strong></td>
-                <td>{item.properties.Staff_per_student}</td>
-              </tr>
-            </tbody>
-          </Table>
-        </Popup>
-      </CircleMarker>
-    )
-  })}
-</MapContainer>
-            </Card>
-      </MediaQuery>
       </>
       
     </AppShell>
