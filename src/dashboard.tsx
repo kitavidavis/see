@@ -101,8 +101,8 @@ export default function Dashboard() {
               <div>
               <Title mb="md" style={{color: 'orange'}} order={5}>Gallery</Title>
               <Carousel>
-              <img height={(height - 150) * 0.5} width={'100%'} src={Image1} />
-              <img height={(height - 150) * 0.5} width={'100%'} src={Image2} />
+              <img height={(height - 150) * 0.4} width={'100%'} src={Image1} />
+              <img height={(height - 150) * 0.4} width={'100%'} src={Image2} />
             </Carousel>
               </div>
             </Group>
@@ -117,7 +117,7 @@ export default function Dashboard() {
   />
   {Schools.features.map((item: any, index: any) => {
     return (
-      <CircleMarker  eventHandlers={{ click: function(){setFeature(item)} }} key={index} center={[item.properties.Latitude, item.properties.Longitude]} pathOptions={fillBlueOptions} radius={20} />
+      <CircleMarker  eventHandlers={{ click: function(){setFeature(item)} }} key={index} center={[item.properties.Latitude, item.properties.Longitude]} pathOptions={fillBlueOptions} radius={14} />
     )
   })}
 </MapContainer>
